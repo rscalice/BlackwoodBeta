@@ -27,9 +27,21 @@ protected:
 	class UAbilitySystemComponent* AbilitySystemComponent;
 
 	virtual void HealthAttributeChanged(const FOnAttributeChangeData& Data);
+	virtual void StaminaAttributeChanged(const FOnAttributeChangeData& Data);
+	virtual void ExperienceAttributeChanged(const FOnAttributeChangeData& Data);
+	virtual void LevelAttributeChanged(const FOnAttributeChangeData& Data);
 
-	UFUNCTION(BlueprintImplementableEvent, Category = "Attribute Events")
+	UFUNCTION(BlueprintImplementableEvent, Category = "Base Attributes")
 	void OnHealthChanged(float Health);
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Base Attributes")
+	void OnStaminaChanged(float Stamina);
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Base Attributes")
+	void OnExperienceChanged(float Experience);
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Base Attributes")
+	void OnLevelChanged(float Experience);
 
 public:
 	// Called every frame

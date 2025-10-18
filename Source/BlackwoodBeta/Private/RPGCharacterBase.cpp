@@ -27,12 +27,30 @@ void ARPGCharacterBase::BeginPlay()
 		BaseActorAttributes = AbilitySystemComponent->GetSet<UBaseActorAttributes>();
 
 		AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(BaseActorAttributes->GetHealthAttribute()).AddUObject(this, &ARPGCharacterBase::HealthAttributeChanged);
+		AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(BaseActorAttributes->GetStaminaAttribute()).AddUObject(this, &ARPGCharacterBase::StaminaAttributeChanged);
+		AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(BaseActorAttributes->GetExperienceAttribute()).AddUObject(this, &ARPGCharacterBase::ExperienceAttributeChanged);
+		AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(BaseActorAttributes->GetLevelAttribute()).AddUObject(this, &ARPGCharacterBase::LevelAttributeChanged);
 	}
 }
 
 void ARPGCharacterBase::HealthAttributeChanged(const FOnAttributeChangeData& Data)
 {
 	OnHealthChanged(Data.NewValue);
+}
+
+void ARPGCharacterBase::StaminaAttributeChanged(const FOnAttributeChangeData& Data)
+{
+	OnStaminaChanged(Data.NewValue);
+}
+
+void ARPGCharacterBase::ExperienceAttributeChanged(const FOnAttributeChangeData& Data)
+{
+	OnExperienceChanged(Data.NewValue);
+}
+
+void ARPGCharacterBase::LevelAttributeChanged(const FOnAttributeChangeData& Data)
+{
+	OnLevelChanged(Data.NewValue);
 }
 
 
