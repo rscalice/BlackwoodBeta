@@ -2,7 +2,6 @@
 .vs/
 Windows/
 
-
 # Compiled Object files
 *.slo
 *.lo
@@ -43,6 +42,7 @@ Windows/
 *.VC.db
 *.VC.opendb
 .vsconfig
+*.slnx
 
 # Precompiled Assets
 SourceArt/**/*.png
