@@ -8,7 +8,7 @@ public class BlackwoodBetaTarget : TargetRules
 	public BlackwoodBetaTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Game;
-		DefaultBuildSettings = BuildSettingsVersion.V6;
+		DefaultBuildSettings = BuildSettingsVersion.V7;
 
 		ExtraModuleNames.AddRange( new string[] { "BlackwoodBeta" } );
 	}
